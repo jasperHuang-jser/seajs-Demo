@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>seajs管理的日历插件示例</title>
+		<style rel="stylesheet">
+			body{ font-size: 14px; }
+			h1,
+			.content{ width:600px;margin-left:auto;margin-right:auto;text-align:center;}
+		</style>
+	<head>
+	<body>
+		<h1>日历插件示例</h1>
+		<div class="content">
+			<label>开始日期：</label><input id="fromDate" type="text" />
+			<label>结束日期：</label><input id="toDate" type="text" />
+		</div>
+		<!--加载seajs库、seajs_config配置文件、加载calendar日历插件模块-->
+		<script src="assets/seajs/1.2.1/sea.js"></script>
+		<script src="assets/seajs_config.js"></script>
+		<script>
+			seajs.use('/assets/module/calendar.js',function(cal){
+				cal.setCalendarDate("#fromDate","Client_general");
+				cal.setCalendarDate("#toDate","Client_general");
+			});
+		</script>
+	</body>
+</html>
